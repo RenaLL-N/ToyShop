@@ -1,0 +1,68 @@
+﻿﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Toy Shop</title>
+    <style>
+        .div {
+            background-color: white;
+            margin: auto;
+            margin-top: -26px;
+            width: 50%;
+            height: 97%;
+            border: 5px solid green;
+            padding: 10px;
+        }
+        .center {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
+
+        .body {
+            background-image: url(setka-linii-tekstura-seryy.jpg);
+        }
+    </style>
+</head>
+<body class="body">
+    <div class="div">
+        <h1 class="center">Toy Shop</h1>
+        <h3 class="center">Add Toy</h3>
+        <div class="center">
+        <form action="javascript:void(0);" method="POST" onsubmit="addToy()">
+            <input type="text" id="add-name" placeholder="New Toy">
+            <input type="submit" value="Add">
+        </form>
+        </div>
+
+        <div id="editToy" class="center">
+            <h3>Edit</h3>
+            <form action="javascript:void(0);" onsubmit="updateToy()">
+                <input type="hidden" id="edit-id">
+                <input type="text" id="edit-name">
+                <input type="submit" value="Save">
+                <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+            </form>
+        </div>
+
+        <p id="counter"></p>
+
+        <div class="center">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Options</th>
+            </tr>
+            <tbody id="toys"></tbody>
+        </table>
+        </div>
+
+        <script src="js/Lab.js" asp-append-version="true"></script>
+        <script type="text/javascript">
+            closeInput();
+            getToys();
+        </script>
+    </div>
+</body>
+</html>
